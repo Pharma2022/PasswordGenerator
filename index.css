@@ -1,0 +1,50 @@
+*, *::before,*::after{
+    box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+  text-shadow: 0.05em 0em black;}
+
+body,html {
+background-color:#1F2937;
+margin: 0;
+padding: 0;
+text-align: center;}
+
+a{text-decoration: none;
+color: whitesmoke;}
+a:hover,a:focus,.copy:hover, .copy:focus{
+    text-decoration: underline;
+    cursor: pointer;}
+    
+h1{font-weight: bolder;}
+
+.container{
+padding: 1rem ;
+min-width: 25rem;
+max-width: 30rem;
+margin: auto;}
+h1,h4,p{color: whitesmoke;}
+
+#generate-el{
+margin: 0.5em auto;
+background: #10B981;
+padding: 0.25em 0.75em;
+border-color: whitesmoke;
+border-radius: 8px;
+color: white;}
+#random-el{
+    color:#10B981;
+}
+#firstNewPass-el, #secondNewPass-el, .container a{
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin:1em auto;
+padding:0.625em 1em;
+background: #273549;
+min-width: 10em;
+width: fit-content;
+min-height: 2em;
+border-color:#273549;
+border-radius:0.7em;
+color: #10B981;}
+
