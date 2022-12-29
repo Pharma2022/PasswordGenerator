@@ -24,10 +24,11 @@ secondPass.addEventListener("click", async ()=>await navigator.clipboard.writeTe
 document.getElementById("passwordLength").addEventListener("change",()=>passwordLength=document.getElementById("passwordLength").value)
 
 /* Toggle Characters*/ 
-const  toggleCharacter= (characterel,numberSymbolHtml,myArray,myArray[0])=>{
+const  toggleCharacter= (characterel,numberSymbolHtml,myArray)=>{
+    
 let charactersToDeleteArr= new Set(myArray)   
    
-characters = characters.includes(arrayElement)?
+characters = characters.includes(myArray[0])?
 characters.filter((element)=> !charactersToDeleteArr.has(element))  :characters.concat(myArray)
 
 characterel.innerText= characterel.innerText === "Add "+numberSymbolHtml?
