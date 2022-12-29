@@ -1,27 +1,39 @@
 *, *::before,*::after{
     box-sizing: border-box;
   font-family: 'Karla', sans-serif;
-  text-shadow: 0.05em 0em black;}
+  text-shadow: 0.05em 0em black;
+  font-weight: 900;
+  text-align: center;
+  }
 
 body,html {
 background-color:#1F2937;
 margin: 0;
 padding: 0;
-text-align: center;}
-
-a{text-decoration: none;
-color: whitesmoke;}
-a:hover,a:focus,.copy:hover, .copy:focus{
-    text-decoration: underline;
-    cursor: pointer;}
-    
-h1{font-weight: bolder;}
+}
 
 .container{
+display: flex;
+flex-direction: column;
 padding: 1rem ;
 min-width: 25rem;
-max-width: 30rem;
 margin: auto;}
+
+
+h1,h4,p{font-weight: 900;}
+h4 i {color: #10B981}
+h4,p,label,fieldset{color: white;}
+
+fieldset{
+display: flex;
+flex-direction: column;
+margin: 1rem auto;
+height: 5rem;}
+    
+p:hover,button:hover{
+text-decoration: underline;
+cursor: pointer;}
+
 h1,h4,p{color: whitesmoke;}
 
 #generate-el{
@@ -31,20 +43,25 @@ padding: 0.25em 0.75em;
 border-color: whitesmoke;
 border-radius: 8px;
 color: white;}
-#random-el{
-    color:#10B981;
-}
-#firstNewPass-el, #secondNewPass-el, .container a{
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin:1em auto;
+
+#random-el{  color:#10B981;}
+
+
+
+#firstNewPass-el, #secondNewPass-el{
+    margin: 1.25rem auto;
 padding:0.625em 1em;
 background: #273549;
 min-width: 10em;
 width: fit-content;
-min-height: 2em;
+height: 2em;
+display: flex;
+flex-direction: column;
+justify-content: center;
 border-color:#273549;
 border-radius:0.7em;
 color: #10B981;}
 
+#passwordLength{  margin-bottom: 2rem;}
+
+#click-copy{display: none;}
