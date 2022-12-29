@@ -16,10 +16,8 @@ document.addEventListener("click",e=>{
     e.target.id === "generate-el"? generate(firstPass,secondPass):""
   
     })
-
-firstPass.addEventListener("click", async ()=>await navigator.clipboard.writeText(firstPass).innerText)
-secondPass.addEventListener("click", async ()=>await navigator.clipboard.writeText(secondPass).innerText)
-
+document.getElementById("firstNewPass-el").addEventListener("click", async ()=>await navigator.clipboard.writeText(document.getElementById("firstNewPass-el").innerText))
+document.getElementById("secondNewPass-el").addEventListener("click", async ()=>await navigator.clipboard.writeText(document.getElementById("secondNewPass-el").innerText))
 
 document.getElementById("passwordLength").addEventListener("change",()=>passwordLength=document.getElementById("passwordLength").value)
 
