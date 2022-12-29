@@ -2,23 +2,30 @@ let  characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 const symbolsArray=["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?"]
 const  numbersArray= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let passwordLength= 15
-
 const numberEl= document.getElementById("numbers")
+
 const  symbolEl= document.getElementById("symbols")
+
 const firstPass = document.getElementById("firstNewPass-el")
 const secondPass = document.getElementById("secondNewPass-el")
-
 /* event listeners*/
 document.addEventListener("click",e=>{
-    e.preventDefault()
+
     e.target.id === "numbers"?  toggleCharacter(numberEl,"Numbers",numbersArray):
     e.target.id === "symbols"? toggleCharacter(symbolEl,"Symbols",symbolsArray):
     e.target.id === "generate-el"? generate(firstPass,secondPass):""
   
     })
 
-firstPass.addEventListener("click", async ()=>await navigator.clipboard.writeText(firstPass.innerText))
-secondPass.addEventListener("click", async ()=>await navigator.clipboard.writeText(secondPass.innerText))
+
+firstPass.addEventListener("click", async ()=>{await navigator.clipboard.writeText(firstPass.innerText)  
+
+alert(`copied!`)
+
+}) 
+secondPass.addEventListener("click", async ()=>{await navigator.clipboard.writeText(secondPass.innerText)
+alert(`copied!`)
+})
 
 document.getElementById("passwordLength").addEventListener("change",()=>passwordLength=document.getElementById("passwordLength").value)
 
@@ -26,12 +33,12 @@ document.getElementById("passwordLength").addEventListener("change",()=>password
 const  toggleCharacter= (characterel,numberSymbolHtml,myArray)=>{
     
 let charactersToDeleteArr= new Set(myArray)   
-   
-characters = characters.includes(myArray[0])?
+
+characters = !characterel.checked?
 characters.filter(element=> !charactersToDeleteArr.has(element) )  :characters.concat(myArray)
 
-characterel.innerText= characterel.innerText === "Add "+numberSymbolHtml?
-     "Remove "+numberSymbolHtml :"Add "+numberSymbolHtml  }
+ 
+      }
 
 const generate =  (firstId,secondId) =>{
 firstId.textContent=""
@@ -41,6 +48,9 @@ secondId.textContent=""
     {firstId.textContent+= characters[randomNumber(characters)]
     secondId.textContent+= characters[randomNumber(characters)]
      }
+     
+     document.getElementById("click-copy").style.display="block"
+     
   }
   
   const randomNumber =  myCharacters => Math.floor(Math.random()*myCharacters.length)
