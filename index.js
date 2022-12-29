@@ -11,8 +11,8 @@ const secondPass = document.getElementById("secondNewPass-el")
 /* event listeners*/
 document.addEventListener("click",e=>{
     e.preventDefault()
-    e.target.id === "numbers"?  toggleCharacter(numberEl,"Numbers",numbersArray,1):
-    e.target.id === "symbols"? toggleCharacter(symbolEl,"Symbols",symbolsArray,"?"):
+    e.target.id === "numbers"?  toggleCharacter(numberEl,"Numbers",numbersArray):
+    e.target.id === "symbols"? toggleCharacter(symbolEl,"Symbols",symbolsArray):
     e.target.id === "generate-el"? generate(firstPass,secondPass):""
   
     })
@@ -24,7 +24,7 @@ secondPass.addEventListener("click", async ()=>await navigator.clipboard.writeTe
 document.getElementById("passwordLength").addEventListener("change",()=>passwordLength=document.getElementById("passwordLength").value)
 
 /* Toggle Characters*/ 
-const  toggleCharacter= (characterel,numberSymbolHtml,myArray,arrayElement)=>{
+const  toggleCharacter= (characterel,numberSymbolHtml,myArray,myArray[0])=>{
 let charactersToDeleteArr= new Set(myArray)   
    
 characters = characters.includes(arrayElement)?
